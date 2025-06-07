@@ -1,0 +1,405 @@
+body {
+    background: content-box radial-gradient(rgb(94, 94, 94), rgb(17, 17, 17));
+margin-top: 100px;
+margin-bottom: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* box-shortcut 수정 */
+.box-shortcut {
+    position: fixed;
+    bottom: 10px; /* 모바일에서 하단으로 이동 */
+    right: 10px; /* 오른쪽 정렬 */
+    z-index: 1000;
+    width: auto; /* 크기 자동 조정 */
+    max-width: 120px; /* 최대 너비 제한 */
+    border-radius: 10px;
+    background: #232323;
+    padding: 5px;
+}
+
+/* 리스트 스타일 */
+.box-shortcut ul {
+    display: flex; /* 가로 정렬 */
+    flex-wrap: wrap; /* 화면 크기에 따라 줄바꿈 */
+    gap: 5px; /* 항목 간 간격 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* 가운데 정렬 */
+}
+
+/* 리스트 항목 */
+.box-shortcut li {
+    font-size: small;
+    text-align: center;
+    padding: 5px;
+}
+
+/* 링크 스타일 */
+.box-shortcut .menu > li > a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    background: #333;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.box-shortcut .menu > li > a:hover {
+    opacity: 0.8; /* 호버 시 투명도 조정 */
+}
+
+/* 첫 번째 항목 스타일 */
+.box-shortcut .menu > li:first-child > .on {
+    border-radius: 10px 10px 0 0;
+    color: rgb(189, 189, 189);
+}
+
+/* 스크롤 버튼 */
+.box-shortcut .btn-scroll-top {
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    width: 100px;
+    background: #0e0e0e;
+    color: rgb(189, 189, 189);
+    text-align: center;
+}
+
+
+ul {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* 항목이 화면을 넘지 않도록 자동으로 줄바꿈 */
+}
+
+li {
+   
+    font-size: small;
+   text-align:center;
+padding: 5px;
+}
+
+
+
+li:hover {
+    opacity: 0.8;
+}
+
+.wrap {
+   
+    margin: auto;
+    max-width: 90%;
+    /* 부모 요소가 가로 너비를 차지하도록 */
+    width: 500px;
+}
+
+.title {
+    letter-spacing: .5em;
+    font-size: 40px;
+    font-weight: lighter;
+    text-align: center;
+    /* 텍스트를 가운데 정렬 */
+    color: rgb(94, 94, 94);
+    margin-bottom: 2px;
+}
+
+
+.profile>p {
+    padding-left: 15px;
+    line-height: 1.8;
+}
+
+a:link {
+    color: rgb(255, 255, 255);
+}
+
+a:link:hover {
+    opacity: 0.8;
+}
+
+a:visited {
+    color: rgb(255, 255, 255);
+}
+
+a {
+    text-decoration-line: none;
+
+}
+
+#up {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 2px;
+    padding-bottom: 20px;
+
+
+}
+
+#up:hover {
+    opacity: 0.8;
+}
+
+.img {
+    margin: auto;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 이미지 클릭 시, 밝기 조절 */
+.img:hover {
+    opacity: 0.8;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    /* 모달이 항상 다른 요소들보다 위에 나타나도록 설정 */
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    /* 초기값 설정 */
+    transition: opacity 0.3s ease;
+    /* 모달 애니메이션 */
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+    /* 모달이 보이기 시작할 때 */
+}
+
+.modal-content {
+    margin: auto;
+    border-radius: 10px;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    animation: zoom 0.3s ease;
+    /* 이미지 확대 애니메이션 */
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* 기본 슬라이더 스타일 */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+}
+
+button.prev:focus,
+button.next:focus,
+.close:focus {
+    outline: 2px solid #fff;
+    /* 키보드로 탐색할 때 포커스 표시 */
+}
+
+/* 슬라이더 화살표의 z-index를 낮게 설정 */
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+/* 모달이 열릴 때 화살표 숨기기 */
+.modal.show~.slider button.prev,
+.modal.show~.slider button.next {
+    display: none;
+}
+
+
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+.music {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 비율 */
+    height: 0;
+}
+
+.music iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 개인 프로필 */
+
+#OC {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    margin: 1px;
+    padding: 10px;
+
+
+}
+
+#oc>img {
+    width: 100px;
+
+}
+
+.name {
+    letter-spacing: .2em;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(144, 144, 144);
+    margin-bottom: 2px;
+}
+
+.OCprofile {
+    float: left;
+    margin: 1px;
+    padding: 10px;
+}
+
+p {
+    color: aliceblue;
+
+}
+
+details {
+    color: aliceblue;
+    padding: 10px;
+    margin: 1px;
+}
+
+summary {
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.OCprofile>img {
+    width: 100px;
+}
+
+/* meter 최적값에서 많이 부족한 색상 설정 */
+meter::-webkit-meter-even-less-good-value {
+    background-color: #6c6c6c;
+}
+
+/* meter 최적값에 근접한 색상 설정 */
+meter::-webkit-meter-suboptimum-value {
+    background-color: #454545;
+}
+
+/* meter 최적값 색상 설정 */
+meter::-webkit-meter-optimum-value {
+    background-color: #000000;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(168, 168, 168);
+    margin-bottom: 0;
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #0000004e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 1px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* 버튼 hover 효과 */
+button:hover {
+    background-color: #6c6c6c;
+}
+
+/* 버튼 클릭 시 눌리는 효과 */
+button:active {
+    background-color: #8a8a8a;
+}
+
+
